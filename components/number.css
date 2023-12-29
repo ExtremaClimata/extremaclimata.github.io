@@ -1,0 +1,27 @@
+.number-number {
+  position: relative;
+  background-color: #ffffff;
+}
+.number-root-class-name {
+  background-color: #ffc4aa;
+}
+.number-root-class-name1 {
+  background-color: #dfb7a6;
+}
+.number-root-class-name2 {
+  background-color: #d47979;
+}
+.number-root-class-name3 {
+  background-color: #ffb9b9;
+}
+@media(max-width: 479px) {
+  .number-number {
+    width: 40px;
+    height: 40px;
+  }
+  .number-text {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+  }
+}

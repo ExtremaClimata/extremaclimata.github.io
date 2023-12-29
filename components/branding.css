@@ -1,0 +1,39 @@
+.branding-branding {
+  gap: var(--dl-space-space-halfunit);
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+}
+.branding-logo {
+  width: 35px;
+  height: 35px;
+  align-self: center;
+  object-fit: cover;
+}
+.branding-company-name {
+  color: #222223;
+  font-size: 36px;
+  font-style: normal;
+  font-family: "Exo 2";
+  font-weight: 700;
+  line-height: 54px;
+}
+
+
+@media(max-width: 767px) {
+  .branding-logo {
+    width: 15px;
+    height: 15px;
+  }
+  .branding-company-name {
+    font-size: 21px;
+    line-height: 32px;
+  }
+}
+@media(max-width: 479px) {
+  .branding-logo {
+    width: 24px;
+    height: 24px;
+  }
+}
