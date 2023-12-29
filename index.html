@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HeatAlert EWS</title>
+    <meta property="og:title" content="HeatAlert EWS" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Karla;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <div class="home-container01">
+          <img
+            alt="image"
+            src="public/warning-circle-svgrepo-com.svg"
+            class="home-image"
+          />
+          <span class="home-text">
+            <span class="home-text001">
+              Siempre siga las instrucciones de Protección Civil.
+            </span>
+            <br class="home-text002" />
+            <span class="home-text003">
+              HeatAlert puede estar sujeto a errores.
+            </span>
+            <br class="home-text004" />
+          </span>
+          <img
+            alt="image"
+            src="public/warning-circle-svgrepo-com.svg"
+            class="home-image1"
+          />
+        </div>
+        <header data-role="Header" class="home-header">
+          <div class="branding-branding branding-root-class-name1">
+            <img
+              alt="image"
+              src="public/ha_logo_glossy-200h.png"
+              class="branding-logo"
+            />
+            <label class="branding-company-name"><span>HeatAlert</span></label>
+          </div>
+          <div class="home-nav">
+            <nav
+              class="navigation-links1-nav navigation-links1-root-class-name10"
+            >
+              <span class="navigation-links1-text">
+                <span><a href="#presentacion">Presentación</a></span>
+              </span>
+              <span class="navigation-links1-text1">
+                <span><a href="#termspriv">Términos y Privacidad</a></span>
+              </span>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="home-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="home-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="home-mobile-menu">
+            <div class="home-nav1">
+              <div class="home-container02">
+                <img
+                  alt="image"
+                  src="public/ha_logo_glossy-200h.png"
+                  class="home-image2"
+                />
+                <div data-role="CloseMobileMenu" class="home-menu-close">
+                  <svg viewBox="0 0 1024 1024" class="home-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links1-nav navigation-links1-root-class-name11"
+              >
+                <span class="navigation-links1-text">
+                  <span><a href="#presentacion">Presentación</a></span>
+                </span>
+                <span class="navigation-links1-text1">
+                  <span><a href="#termspriv">Términos y Privacidad</a></span>
+                </span>
+              </nav>
+            </div>
+            
+        </header>
+        <div class="home-hero">
+          <h1 class="home-text005">
+            <span class="home-text006">Alertas tempranas</span>
+            <span>&nbsp; para un planeta cada vez más cálido.</span>
+          </h1>
+          <span class="home-text008">
+            <br />
+            <span>
+              HeatAlert busca prevenir la incidencia de Enfermedades
+              Relacionadas al Calor (ERCs), la muerte y la carga asociada con
+              las mismas sobre servicios de emergencia.
+            </span>
+            <br />
+            <br />
+            <span>
+              HeatAlert responde a la necesidad de Sistemas de Alerta Temprana
+              gratuitos contra Eventos de Calor Extremo, como recomienda el IPCC
+              (IPCC, AR6 SYR, C.3.7).
+            </span>
+            <span></span>
+            <span></span>
+          </span>
+          <button class="home-button button"><span>CONOCER MÁS</span></button>
+
+          <button class="home-button1 button">
+            <span><a href="https://github.com/ExtremaClimata/HeatAlert-APP/releases/download/release/HeatAlert_BETA.apk">DESCARGA HEATALERT BETA V.1</a></span>
+          </button>
+        </div>
+        <section id="presentacion">
+        <div class="home-pricing">
+          <div class="home-container03">
+            <div class="home-pricing-card">
+              <span class="home-text018">confianza y seguridad</span>
+              <div class="home-container04">
+                <span class="home-text019">
+                  Del grupo de 48 personas que HeatAlert encuestó para evaluar
+                  confianza en el sistema, el 100% confiaría en HeatAlert y cree
+                  que puede reducir efectivamente las Enfermedades Relacionadas
+                  al Calor (ERCs) en la región.
+                </span>
+              </div>
+            </div>
+            <div class="home-pricing-card1">
+              <span class="home-text020">
+                APTA PARA UNA REGIÓN CON TEMPERATURAS RÉCOrd
+              </span>
+              <div class="home-container05">
+                <span class="home-text021">
+                  CONAGUA (2023) estableció que la temperatura ambiente máxima
+                  en el mes de junio en Torreón fue de 44.6°C, superando el
+                  límite saludable de 40°C.
+                </span>
+                <span class="home-text022">
+                  ✔ Información obtenida a través de solicitud en Plataforma
+                  Nacional de Transparencia.
+                </span>
+                <span class="home-text023">
+                  ✔ HeatAlert obtiene sus datos a través de estaciones
+                  meteorológicas independientes y calibradas con estándares de
+                  la NOAA.
+                </span>
+                <span class="home-text024">
+                  ✔ El uso de HeatAlert es 100% gratuito.
+                </span>
+              </div>
+            </div>
+            <div class="home-pricing-card2">
+              <span class="home-text025">
+                envío de alertas que mitigan riesgos a la salud
+              </span>
+              <div class="home-container06">
+                <span class="home-text026">
+                  HeatAlert hubiera enviado notificaciones de prevención 19 de
+                  los 30 días del mes, una alerta de emergencia 3 de ellos por
+                  superación de la temperatura saludable de bulbo húmedo (28°C).
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-steps">
+          <h1 class="home-text027">CÓMO FUNCIONA</h1>
+          <span class="home-text028">
+            <span>
+              Una Estación de Monitoreo y Alerta de HeatAlert (EMA) equipada con
+              sensores ambientales envía una señal a un servidor cuando se
+              supera un límite ambiental saludable.&nbsp;
+            </span>
+            <span>
+              Después, el servidor envía la notificación a la aplicación de
+              HeatAlert y el usuario recibe la alerta con su categoría
+              correspondiente.
+            </span>
+          </span>
+          <div class="home-container07">
+            <div class="home-step">
+              <div class="home-container08">
+                <div class="home-line"></div>
+                <div class="home-container09"></div>
+                <div class="home-line1"></div>
+              </div>
+              <div class="home-container10">
+                <h1 class="home-text031">LÍMITE SOBREPASADO</h1>
+                <span class="home-text032">
+                  <span>
+                    Una EMA registra cada minuto la temperatura, humedad,
+                    temperatura húmeda, presión atmosférica y sensación térmica.
+                    Si se sobrepasa algún límite saludable (establecido por
+                    estudios científicos), la EMA envía una señal al servidor de
+                    notificaciones de acuerdo a la categoría de la anomalía.
+                  </span>
+                  <br />
+                </span>
+              </div>
+            </div>
+            <div class="home-step1">
+              <div class="home-container11">
+                <div class="home-line2"></div>
+                <div class="home-container12"></div>
+                <div class="home-line3"></div>
+              </div>
+              <div class="home-container13">
+                <h1 class="home-text035">NOTIFICACIÓN SOLICITADA</h1>
+                <span class="home-text036">
+                  <span>
+                    La EMA solicita el envío de una notificación o de una
+                    alerta, dependiendo de la situación. El servidor de
+                    notificaciones procesa la solicitud.
+                  </span>
+                  <br />
+                </span>
+              </div>
+            </div>
+            <div class="home-step2">
+              <div class="home-container14">
+                <div class="home-line4"></div>
+                <div class="home-container15"></div>
+                <div class="home-line5"></div>
+              </div>
+              <div class="home-container16">
+                <h1 class="home-text039">NOTIFICACIÓN ENVIADA</h1>
+                <span class="home-text040">
+                  <span>
+                    El servidor de notificaciones envía una notificación o una
+                    alerta a un dispositivo Android a través de la aplicación
+                    HeatAlert.
+                  </span>
+                  <br />
+                </span>
+              </div>
+            </div>
+            <div class="home-step3">
+              <div class="home-container17">
+                <div class="home-line6"></div>
+                <div class="home-container18"></div>
+                <div class="home-line7"></div>
+              </div>
+              <div class="home-container19">
+                <h1 class="home-text043">EL USUARIO EMPRENDE ACCIÓN</h1>
+                <span class="home-text044">
+                  <span>
+                    El usuario final recibe la alerta, y apoyado del contenido
+                    de la misma, puede saber qué es lo más responsable y seguro
+                    de realizar dependiendo de su situación.
+                  </span>
+                  <br />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-stats">
+          <div class="home-stat">
+            <h1 class="home-text047">48</h1>
+            <span class="home-text048">ENCUESTADOS</span>
+            <span class="home-text049">
+              ACERCA DE SALUD, SI CREEN QUE HEATALERT FUNCIONARÍA Y PERSPECTIVA
+              POLÍTICA SOBRE CAMBIO CLIMÁTICO.
+            </span>
+          </div>
+          <div class="home-stat1">
+            <h1 class="home-text050">5</h1>
+            <span class="home-text051">USUARIOS BETA</span>
+            <span class="home-text052">
+              DE LA APP DE HEATALERT. RECIBIERON ALERTAS VARIADAS ENTRE EL 15 Y
+              EL 22 DE NOVIEMBRE DEL 2023. 5 PERSONAS DE DISTINTOS CONTEXTOS
+              SOCIALES Y ECONÓMICOS.
+            </span>
+          </div>
+          <div class="home-stat2">
+            <h1 class="home-text053">0</h1>
+            <span class="home-text054">
+              USUARIOS PRESENTARON ANSIEDAD O CONGELAMIENTO
+            </span>
+            <span class="home-text055">
+              AL ESCUCHAR LA ALERTA, PROBANDO QUE HEATALERT IMPULSA LA ACCIÓN EN
+              UNA EMERGENCIA DE MANERA CORRECTA.
+            </span>
+          </div>
+          <div class="home-stat3">
+            <h1 class="home-text056">100%</h1>
+            <span class="home-text057">
+              DE LOS USUARIOS INDICARON SENTIRSE CON SEGURIDAD PARA ACTUAR CON
+              BASE EN LA INFORMACIÓN DE LA ALERTA
+            </span>
+            <span class="home-text058">
+              Y EL 100% DE LOS ENCUESTADOS CREEN QUE HEATALERT PUEDE PREVENIR
+              LAS ENFERMEDADES RELACIONADAS AL CALOR (ERCs).
+            </span>
+          </div>
+        </div>
+        <div class="home-banner">
+          <div class="home-container20">
+            <h1 class="home-text059">
+              SÓLO 1 DE LOS 5 USUARIOS PRUEBA INDICARON DESENSIBILIZARSE AL
+              RECIBIR ALERTAS CRÍTICAS CONSTANTES
+            </h1>
+            <span class="home-text060">
+              Todos los demás usuarios indicaron sentirse con seguridad y
+              confianza para actuar correctamente ante una emergencia ocasionada
+              por un evento de calor extremo. HeatAlert también recomienda
+              llamar al 9-1-1 en caso de una emergencia.
+            </span>
+          </div>
+          <img
+            alt="image"
+            src="public/ha_logo_glossy-1500h.png"
+            class="home-image3"
+          />
+        </div>
+        <div class="home-features">
+          <h1 class="home-text061">
+            <span>ESCUCHA LOS SONIDOS DE ALERTA</span>
+            <br />
+          </h1>
+          <span class="home-text064">
+            Procura hacerlo en un entorno controlado. Evita causar alertas
+            falsas.
+          </span>
+          <div class="home-container21">
+            <div class="home-feature-card">
+              <svg viewBox="0 0 1024 1024" class="home-icon10">
+                <path
+                  d="M512 426q34 0 60 26t26 60-26 60-60 26-60-26-26-60 26-60 60-26zM754 754q100-100 100-242v-2q0-58-29-129t-71-111l-62 62q76 76 76 180 0 108-74 182zM512 682q70 0 120-50t50-120-50-120-120-50-120 50-50 120 50 120 120 50zM332 692q-76-76-76-180 0-108 74-182l-60-60q-100 100-100 242v2q0 58 29 129t71 111zM854 170q34 0 59 26t25 60v512q0 34-25 60t-59 26h-684q-34 0-59-26t-25-60v-512q0-34 25-60t59-26h684z"
+                ></path>
+              </svg>
+              <h2 class="home-text065">SENSACIÓN +40°C</h2>
+              <span class="home-text066">
+                El sonido se dispara cuando una EMA detecta una sensación
+                térmica superior a los 40°C, un límite saludable para los
+                humanos.
+              </span>
+              <span class="home-text067">CATEGORÍA: NOTIFICACIÓN</span>
+              
+
+              <button class="home-button2 button" onclick="toggleAudio('audio1')"><span>ESCUCHAR</span></button>
+              <audio id="audio1" src="/audio/40SENSA.wav"></audio>
+
+
+            </div>
+            <div class="home-feature-card1">
+              <svg viewBox="0 0 1024 1024" class="home-icon12">
+                <path
+                  d="M512 426q34 0 60 26t26 60-26 60-60 26-60-26-26-60 26-60 60-26zM754 754q100-100 100-242v-2q0-58-29-129t-71-111l-62 62q76 76 76 180 0 108-74 182zM512 682q70 0 120-50t50-120-50-120-120-50-120 50-50 120 50 120 120 50zM332 692q-76-76-76-180 0-108 74-182l-60-60q-100 100-100 242v2q0 58 29 129t71 111zM854 170q34 0 59 26t25 60v512q0 34-25 60t-59 26h-684q-34 0-59-26t-25-60v-512q0-34 25-60t59-26h684z"
+                ></path>
+              </svg>
+              <h2 class="home-text068">
+                <span>AMBIENTE</span>
+                <br />
+                <span>+40°C</span>
+              </h2>
+              <span class="home-text072">
+                La notificación es enviada cuando una EMA detecta una
+                temperatura ambiente superior a los 40°C, un límite saludable y
+                con riesgo aumentado para los humanos.
+              </span>
+              <span class="home-text073">CATEGORÍA: NOTIFICACIÓN</span>
+              
+
+              <button class="home-button3 button" onclick="toggleAudio('audio2')"><span>ESCUCHAR</span></button>
+              <audio id="audio2" src="/audio/40AMB.wav"></audio>
+
+
+
+
+            </div>
+            <div class="home-feature-card2">
+              <svg viewBox="0 0 1024 1024" class="home-icon14">
+                <path
+                  d="M554 598v-172h-84v172h84zM554 768v-86h-84v86h84zM42 896l470-810 470 810h-940z"
+                ></path>
+              </svg>
+              <h2 class="home-text074">TEMPERATURA HÚMEDA ALTA (28°C)</h2>
+              <span class="home-text075">
+                Alerta de emergencia sonora y visual enviada; riesgo
+                generalizado para la vida humana y funcionamiento óptimo de
+                infraestructura.
+              </span>
+              <span class="home-text076">CATEGORÍA: EMERGENCIA</span>
+              
+
+              <button class="home-button4 button" onclick="toggleAudio('audio3')"><span>ESCUCHAR</span></button>
+              <audio id="audio3" src="/audio/alarmtrim.wav"></audio>
+
+
+
+            </div>
+            <div class="home-feature-card3">
+              <svg viewBox="0 0 1024 1024" class="home-icon16">
+                <path
+                  d="M726 672l-160-160 160-160-54-54-160 160-160-160-54 54 160 160-160 160 54 54 160-160 160 160zM672 128l224 224v320l-224 224h-320l-224-224v-320l224-224h320z"
+                ></path>
+              </svg>
+              <h2 class="home-text077">TEMPERATURA HÚMEDA MORTAL (31.5°C+)</h2>
+              <span class="home-text078">
+                Cualquier humano morirá en poco tiempo si no recibe enfriamiento
+                e hidratación urgente. Situación más peligrosa y que HeatAlert
+                notifica.
+              </span>
+              <span class="home-text079">CATEGORÍA: ALERTA CRÍTICA</span>
+              
+
+              <button class="home-button5 button" onclick="toggleAudio('audio4')"><span>ESCUCHAR</span></button>
+              <audio id="audio4" src="/audio/CriticalAlert.wav"></audio>
+
+
+
+
+            </div>
+          </div>
+        </div>
+        <div class="home-hero1">
+          <div class="home-container22">
+            <h1 class="home-text080">¿Qué sigue?</h1>
+            <span class="home-text081">
+              HeatAlert demostró tener familiaridad y causar seguridad y
+              confianza en los usuarios. El sistema funciona y puede ser
+              utilizado en una Ola de Calor para prevenir las Enfermedades
+              Relacionadas al Calor y el exceso de mortalidad causado por la
+              crisis climática.
+            </span>
+          </div>
+          <div class="home-container23">
+            <img alt="image" src="public/ema1-1400w.png" class="home-image4" />
+            <img alt="image" src="public/ema2-400w.png" class="home-image5" />
+          </div>
+        </div>
+        <section class="home-quote-one">
+          <div class="home-quote-content">
+            <h2 class="home-quote">
+              HeatAlert puede salvar vidas y beneficiaría a al menos 457,018
+              personas en Torreón que tienen acceso a internet, de acuerdo al
+              Censo 2020 sobre Uso de Tecnología en Hogares del INEGI (ENDUTIH),
+              además de abordar los Objetivos de Desarrollo Sostenible (ODS)
+              número 3, 9, 11 y 13 y colaborar a la acción climática necesaria
+              para asegurar la seguridad, salud y bienestar de las mayores
+              personas posibles.
+            </h2>
+          </div>
+        </section>
+        <div class="home-donate">
+          <div class="home-content">
+            <div class="home-header1">
+              <span class="home-heading">
+                HeatAlert es replicable, además de gratuito.
+              </span>
+              <span class="home-caption">
+                El Sistema de Alerta Temprana HeatAlert (SATH) puede ser
+                extendido a otras zonas del estado y del país. HeatAlert no es
+                un servicio; es una salvaguarda para la ciudadanía y sus vidas.
+                Con la correcta implementación y validación gubernamental, el
+                SATH podría asegurar la vida e integridad de personas en estado
+                de vulnerabilidad económica y social al promover la
+                implementación de Centros de Enfriamiento accesibles para todas
+                las personas durante Eventos de Calor Extremo, como recomienda
+                el IPCC en su Sexto Reporte Síntesis (2023).
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="termspriv">
+        <section class="home-donation-use">
+          <div class="home-header2">
+            <h2 class="home-heading1">
+              Privacidad y Términos de Uso de HeatAlert.
+            </h2>
+            <p class="home-caption1">
+              HeatAlert no recolecta datos sobre ti ni tu dispositivo. HeatAlert
+              puede estar sujeto a errores como cualquier otro Sistema de Alerta
+              y de Monitoreo, apóyese siempre de otros recursos de información y
+              sea consciente de sus acciones durante una emergencia.
+            </p>
+          </div>
+          <div class="home-accordion">
+            <div
+              data-role="accordion-container"
+              class="accordion-element home-element"
+            >
+              <div class="home-header3">
+                <h3 class="home-text082">
+                  El Sistema de Alerta Temprana HeatAlert (El Sistema,
+                  HeatAlert);
+                </h3>
+                <div
+                  class="icon-container-icon-container icon-container-root-class-name4"
+                >
+                  <svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-closed"
+                    class="icon-container-icon"
+                  >
+                    <path
+                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path></svg
+                  ><svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-open"
+                    class="icon-container-icon2"
+                  >
+                    <path
+                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div data-role="accordion-content" class="accordion-content">
+                <p class="home-text083">
+                  Está compuesto de una Estación de Monitoreo y Alerta (EMA) que
+                  como cualquier desarrollo tecnológico puede ser susceptible a;
+                  (i) fallas de origen en las EMA(s); (ii) fallas en el sistema
+                  de transmisión al servidor de entrega de notificaciones; (iii)
+                  fallas en la transmisión del servidor de entrega de
+                  notificaciones al Usuario; (iv) fallas en las redes
+                  electrónicas y / o Internet, incluyendo sin limitar aquellas
+                  derivadas de falta de abastecimiento energético o de
+                  proveedores de telecomunicaciones; (v) fallas debido a
+                  fenómenos climáticos o geológicos; (vi) robo; (vii)
+                  vandalismo; (viii) entre otras, que pueden afectar el correcto
+                  funcionamiento del Sistema (activaciones por error o no
+                  activaciones o transmisión errónea de información).
+                </p>
+              </div>
+            </div>
+            <div
+              data-role="accordion-container"
+              class="accordion-element home-element1"
+            >
+              <div class="home-header4">
+                <h3 class="home-text084">
+                  Como usuario, debe conocer y cumplir con los protocolos,
+                  normas e indicaciones de Protección Civil del lugar donde se
+                  encuentre;
+                </h3>
+                <div
+                  class="icon-container-icon-container icon-container-root-class-name5"
+                >
+                  <svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-closed"
+                    class="icon-container-icon"
+                  >
+                    <path
+                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path></svg
+                  ><svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-open"
+                    class="icon-container-icon2"
+                  >
+                    <path
+                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div data-role="accordion-content" class="accordion-content">
+                <p class="home-text085">
+                  <span>
+                    Como usuario, reconoce que HeatAlert está diseñado para
+                    entregar una alerta situacional respecto de un Evento de
+                    Calor Extremo, pero no debe ser utilizada como el único
+                    medio o fuente de información antes de tomar una decisión.
+                  </span>
+                  <br />
+                  <br />
+                  <span>
+                    EL USUARIO RECONOCE QUE LAS FALLAS PUEDEN OCURRIR EN
+                    CUALQUIER MOMENTO Y POR MÚLTIPLES CAUSAS, POR LO QUE AL USAR
+                    O RECIBIR LOS SERVICIOS DEL SISTEMA DE ALERTA TEMPRANA
+                    HEATALERT, HEATALERT, EMA(S) Y HEATALERT APP LO HACE BAJO SU
+                    PROPIA RESPONSABILIDAD Y RIESGO. POR LO ANTERIOR, EL USUARIO
+                    LIBERA A HEATALERT DE CUALQUIER RESPONSABILIDAD DERIVADA DE
+                    LAS ACCIONES RELACIONADAS CON LA PRESTACIÓN DE LOS SERVICIOS
+                    DE HEATALERT Y SUS DERIVADOS, INCLUYENDO LA OCURRENCIA DE
+                    CUALQUIER FALLA, POR LO QUE RENUNCIA AL EJERCICIO DE
+                    CUALQUIER ACCIÓN EN CONTRA DE HEATALERT POR ESTOS CONCEPTOS.
+                  </span>
+                  <br />
+                </p>
+              </div>
+            </div>
+            <div
+              data-role="accordion-container"
+              class="accordion-element home-element2"
+            >
+              <div class="home-header5">
+                <h3 class="home-text091">El Software de HeatAlert</h3>
+                <div
+                  class="icon-container-icon-container icon-container-root-class-name6"
+                >
+                  <svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-closed"
+                    class="icon-container-icon"
+                  >
+                    <path
+                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path></svg
+                  ><svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-open"
+                    class="icon-container-icon2"
+                  >
+                    <path
+                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div data-role="accordion-content" class="accordion-content">
+                <p class="home-text092">
+                  Como usuario, acepto que no incurriré en prácticas de
+                  ingeniería reversa, decompilación, "patching" ni ninguna
+                  práctica que intervenga con el funcionamiento ni empaquetado
+                  de HeatAlert App. Acepto que no intentaré obtener acceso no
+                  autorizado a los Sistemas de Transmisión de HeatAlert, a las
+                  EMAs ni distribuiré, comercializaré, adaptaré, cambiaré,
+                  duplicaré, copiaré, clonaré ni causaré pérdida de propiedad
+                  intelectual al Software, código y derivados digitales de
+                  HeatAlert, incluyendo el nombre de "HeatAlert", "Estación de
+                  Monitoreo y Alerta de HeatAlert (EMA)", "HeatAlert App" y
+                  "Sistema de Alerta Temprana HeatAlert" ni ninguna variante de
+                  los mismos.
+                </p>
+              </div>
+            </div>
+            <div
+              data-role="accordion-container"
+              class="accordion-element home-element3"
+            >
+              <div class="home-header6">
+                <h3 class="home-text093">Uso comercial y empresarial</h3>
+                <div
+                  class="icon-container-icon-container icon-container-root-class-name7"
+                >
+                  <svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-closed"
+                    class="icon-container-icon"
+                  >
+                    <path
+                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path></svg
+                  ><svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-open"
+                    class="icon-container-icon2"
+                  >
+                    <path
+                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div data-role="accordion-content" class="accordion-content">
+                <p class="home-text094">
+                  Acepto que no usaré HeatAlert como solución empresarial&nbsp;
+                  y que no estoy permitido a cobrar o exigir pago por el uso de
+                  HeatAlert a ninguna persona (física o moral), institución,
+                  empresa, sociedad, grupo, etc. y bajo ninguna circunstancia.
+                  HeatAlert es una salvaguarda gratuita, úsela como tal.
+                </p>
+              </div>
+            </div>
+            <div
+              data-role="accordion-container"
+              class="accordion-element home-element4"
+            >
+              <div class="home-header7">
+                <h3 class="home-text095">Su privacidad</h3>
+                <div
+                  class="icon-container-icon-container icon-container-root-class-name8"
+                >
+                  <svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-closed"
+                    class="icon-container-icon"
+                  >
+                    <path
+                      d="M213.333 554.667h256v256c0 23.552 19.115 42.667 42.667 42.667s42.667-19.115 42.667-42.667v-256h256c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-256v-256c0-23.552-19.115-42.667-42.667-42.667s-42.667 19.115-42.667 42.667v256h-256c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path></svg
+                  ><svg
+                    viewBox="0 0 1024 1024"
+                    data-role="accordion-icon-open"
+                    class="icon-container-icon2"
+                  >
+                    <path
+                      d="M213.333 554.667h597.333c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-597.333c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div data-role="accordion-content" class="accordion-content">
+                <p class="home-text096">
+                  HeatAlert no recolecta ningún dato acerca de usted, su
+                  dispositivo o su red. El sitio de HeatAlert está alojado en
+                  GitHub Pages, puede revisar la política de privacidad de
+                  Github
+                  en&nbsp;https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement.
+                  HeatAlert usa OneSignal para entregar notificaciones y alertas
+                  de emergencia, OneSignal cumple con los estándares
+                  internacionales de privacidad más altos y estrictos, como la
+                  ley HIPPA, la CCPA y la GDPR; puede revisar la política de
+                  privacidad de OneSignal en&nbsp;https://onesignal.com/privacy.
+                </p>
+              </div>
+            </div>
+          </section>
+            <div>
+              <div class="home-container25">
+                <script>
+                  /*
+                   Accordion - Code Embed
+                   */
+                   const accordionContainers = document.querySelectorAll('[data-role='accordion-container']'); // All accordion containers
+                   const accordionContents = document.querySelectorAll('[data-role='accordion-content']'); // All accordion content
+                   const accordionIconsClosed = document.querySelectorAll('[data-role='accordion-icon-closed']'); // All accordion closed icons
+                   const accordionIconsOpen = document.querySelectorAll('[data-role='accordion-icon-open']'); // All accordion open icons
+
+                   accordionContents.forEach((accordionContent) => {
+                       accordionContent.style.display = 'none'; //Hides all accordion contents
+                   });
+
+                   accordionIconsClosed.forEach((icon) => {
+                     icon.style.display = 'flex'
+                   })
+
+                   accordionIconsOpen.forEach((icon) => {
+                     icon.style.display = 'none'
+                   })
+
+                   accordionContainers.forEach((accordionContainer, index) => {
+                       accordionContainer.addEventListener('click', () => {
+                           if (accordionContents[index].style.display === 'flex') {
+                               // If the accordion is already open, close it
+                               accordionContents[index].style.display = 'none';
+                               accordionIconsClosed[index].style.display = 'flex';
+                               accordionIconsOpen[index].style.display = 'none'
+                           } else {
+                               // If the accordion is closed, open it
+                               accordionContents.forEach((accordionContent) => {
+                                   accordionContent.style.display = 'none'; //Hides all accordion contents
+                               });
+
+                               accordionIconsClosed.forEach((accordionIcon) => {
+                                   accordionIcon.style.display = 'flex'; // Resets all icon transforms to 0deg (default)
+                               });
+
+                               accordionIconsOpen.forEach((accordionIcon) => {
+                                 accordionIcon.style.display = 'none';
+                               })
+
+                               accordionContents[index].style.display = 'flex'; // Shows accordion content
+                               accordionIconsClosed[index].style.display = 'none'; // Rotates accordion icon 180deg
+                               accordionIconsOpen[index].style.display = 'flex';
+                           }
+                       });
+                   });
+                </script>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="home-updates"></section>
+        <footer class="home-footer">
+          <div class="home-top">
+            <div class="branding-branding">
+              <img
+                alt="image"
+                src="public/ha_logo_glossy-200h.png"
+                class="branding-logo"
+              />
+              <label class="branding-company-name">
+                <span>HeatAlert</span>
+              </label>
+            </div>
+          </div>
+          <div class="home-middle">
+            <span class="home-text097">
+              <span class="home-text098">heatalert@proton.me</span>
+              <br />
+            </span>
+            <span class="home-text100">
+              (algunos proveedores de correo institucionales bloquean el dominio
+              de ProtonMail, procure usar su correo personal. Le aseguramos que
+              sus datos serán protegidos.)
+            </span>
+            <span class="home-text101">TORREÓN, COAHUILA, MÉXICO</span>
+          </div>
+          <div class="home-bottom">
+            <span class="home-copyright">© HeatAlert - 2023</span>
+          </div>
+        </footer>
+        <div>
+          <div class="home-container27">
+            <script>
+              const slides = document.querySelectorAll('.slide');
+              let currentSlide = 0;
+
+              function showSlide(n) {
+                slides[currentSlide].classList.remove('slide-active');
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('slide-active');
+              }
+
+              const previousSlideButton = document.querySelector('#previous-slide');
+              previousSlideButton.addEventListener('click', () => {
+                showSlide(currentSlide - 1);
+              });
+
+              const nextSlideButton = document.querySelector('#next-slide');
+              nextSlideButton.addEventListener('click', () => {
+                showSlide(currentSlide + 1);
+              });
+            </script>
+          </div>
+        </div>
+        <div>
+          <div class="home-container29">
+            <script>
+              function setCookie(name, value, days) {
+                // Set the cookie with the given name, value, and expiration time (in days)
+                let expires = '';
+                if (days) {
+                  let date = new Date();
+                  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                  expires = '; expires=' + date.toUTCString();
+                }
+                document.cookie = name + '=' + (value || '') + expires + '; path=/';
+              }
+
+              function getCookie(name) {
+                // Get the value of the cookie with the given name
+                let nameEQ = name + '=';
+                let ca = document.cookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                  let c = ca[i];
+                  while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                  if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+              }
+
+              function removeCookie(name) {
+                // Remove the cookie with the given name
+                setCookie(name, '', -1); // Set the cookie with an expiration time of -1 days
+              }
+
+              document.getElementById('close').addEventListener('click', function(){
+                // Get the persistence value
+                let persistence = document.getElementById('banner').getAttribute('data-persistence');
+                if (persistence === 'true') {
+                  // If persistence is enabled, set a cookie to remember that the banner is closed
+                  setCookie('bannerClosed', 'true', 1); // Set the cookie with an expiration time of 1 day
+                } else {
+                  removeCookie('bannerClosed')
+                }
+                document.getElementById('banner').style.display = 'none'; // Hide the banner
+              });
+
+              window.addEventListener('load', function() {
+                // Check if the banner should be displayed or not
+                let bannerClosed = getCookie('bannerClosed');
+                if (bannerClosed === 'true') {
+                  // If the bannerClosed cookie is set, hide the banner
+                  document.getElementById('banner').style.display = 'none';
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      data-section-id="navbar"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+    <script>
+      function toggleAudio(audioId) {
+        var audio = document.getElementById(audioId);
+    
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+    </script>
+  </body>
+</html>
